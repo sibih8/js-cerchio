@@ -6,61 +6,63 @@
     <title>Document</title>
 </head>
 <body>
-<script>   
+    <script>
+        let diametro = 400;
+let centroX, centroY, raggio;
 
-let diametro = 400
+function setup() {
+  createCanvas(600, 600);
+  background(220);
+  centroX = width / 2;
+  centroY = height / 2;
+  raggio = diametro / 2;
+  fill(0, 0, 0)
+  
+  circle(centroX, centroY, diametro)
+  
+  fill(255, 255, 255)
+  circle(centroX, centroY, diametro - 40)
 
-    function setup() {
-      createCanvas(600, 600);
-      background(220);
-      // da qui disegnamo i cerchi concentrici di un bersaglio
-      fill(0, 0, 0)
-      
-      /*
-        width -> la larghezza del canvas -> in questo caso 600
-        height -> l'altezza del canvas. -> in questo caso 600
-        
-        mouseX -> coordinata X del punto in cui il mouse si trova nel canvas
-        mouseY -> coordinata Y del punto in cui il mouse si trova nel canvas
-      
-      */
-      circle(width/2, height/2, diametro)
-      
-      fill(255, 255, 255)
-      circle(width/2, height/2, diametro - 40)
+  fill(255, 0, 0)
+  circle(centroX, centroY, diametro - 80)
+  
+  fill(0, 255, 0)
+  circle(centroX, centroY, diametro - 120)
 
-      fill(255, 255, 255)
+  fill(0, 0, 255)
+  circle(centroX, centroY, diametro - 160)
+  
+  fill(255, 255, 0)
+  circle(centroX, centroY, diametro - 200)
 
-            fill(0, 0, 255)
-            circle(300, 300, 250)
+  fill(0, 255, 255)
+  circle(centroX, centroY, diametro - 240)
 
-            fill(102, 102, 255)
-            circle(300, 300, 150)
+  fill(255, 0, 255)
+  circle(centroX, centroY, diametro - 280)
 
-            fill(0, 0, 255)
-            circle(300, 300, 50)
-      
+  fill(0, 25, 255)
+  circle(centroX, centroY, diametro - 320)
+
+  fill(255, 0, 100)
+  circle(centroX, centroY, diametro - 360)
+}
+
+function draw() {
+  
+}
+
+
+function mouseClicked(){
+    let distanza = dist(mouseX, mouseY, centroX, centroY);
+    if (distanza <= raggio) {
+        console.log("hai cliccato nel bersaglio");
+    } else {
+        console.log("fuori dal bersaglio");
     }
-    
-    function draw() {
-      
-    }
-    
-    
-    function mouseClicked(){
-      width/2, height/2
-      let r = diametro / 2
-      // 1. Calcolare la distanza fra il centro del cerchio e il punto cliccato
-      // 2. SE la distanza calcolata è minore o uguale del raggio -> ho cliccato nel cerchio
-      
-      
-        if(diametro <= raggio)
-
-      console.log(mouseX, mouseY)
-    
-      
-    }</script>
-
-    <script src="/static/js/p5.min.js"></script>
+    console.log(mouseX, mouseY);
+}
+    </script>
+    <script src="static/js/p5.min.js"></script>
 </body>
 </html>
